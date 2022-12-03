@@ -81,6 +81,10 @@ public class IntegerListImpl implements IntegerList {
         sortInsertion();
         validateItem(item);
 
+       return binarySearch(item);
+    }
+
+    public boolean binarySearch(Integer item) {
         int min = 0;
         int max = arrayList.length - 1;
 
