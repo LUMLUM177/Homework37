@@ -84,26 +84,6 @@ public class IntegerListImpl implements IntegerList {
        return binarySearch(item);
     }
 
-    public boolean binarySearch(Integer item) {
-        int min = 0;
-        int max = arrayList.length - 1;
-
-        while (min <= max) {
-            int mid = (min + max) / 2;
-
-            if (item == arrayList[mid]) {
-                return true;
-            }
-
-            if (item < arrayList[mid]) {
-                max = mid - 1;
-            } else {
-                min = mid + 1;
-            }
-        }
-        return false;
-    }
-
     @Override
     public int indexOf(Integer item) {
         for (int i = 0; i < size; i++) {
@@ -183,6 +163,26 @@ public class IntegerListImpl implements IntegerList {
             }
             arrayList[j] = temp;
         }
+    }
+
+    private boolean binarySearch(Integer item) {
+        int min = 0;
+        int max = arrayList.length - 1;
+
+        while (min <= max) {
+            int mid = (min + max) / 2;
+
+            if (item == arrayList[mid]) {
+                return true;
+            }
+
+            if (item < arrayList[mid]) {
+                max = mid - 1;
+            } else {
+                min = mid + 1;
+            }
+        }
+        return false;
     }
 
     @Override
